@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,13 +21,14 @@
 <body>
     <div id="app">
         
-    <v-app app>
+        <!-- <v-app app id="app"> -->
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-        
-    </v-app>
+            <main class="py-4">
+                @yield('content')
+            </main>
+            
+        <!-- </v-app id="app"> -->
     </div>
+        <script src="{{ asset(mix('js/app.js')) }}"></script>
 </body>
 </html>
