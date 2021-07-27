@@ -13,6 +13,10 @@ export default ({
     name: "Home",
     components: {
         PublicHeader,
+    },
+    
+    mounted() {
+        console.log('Good')
     }
 
 })

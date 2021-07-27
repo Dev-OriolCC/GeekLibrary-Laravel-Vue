@@ -12,16 +12,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link text-white h5 mt-2" href="#">Home <span class="sr-only">(current)</span></a>
+                            <router-link to="/">
+                                <a class="nav-link text-white h5 mt-2" href="#">Home <span class="sr-only">(current)</span></a>
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white h5 mt-2" href="#">Link</a>
+                            <router-link to="/About">
+                                <a class="nav-link text-white h5 mt-2" href="#">About</a>
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white h5 mt-2" href="#">Link</a>
+                            <a class="nav-link text-white h5 mt-2" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white h5 mt-2" href="#">Link</a>
+                            <a class="nav-link text-white h5 mt-2" href="#">Extra</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 mr-5 my-lg-0">
