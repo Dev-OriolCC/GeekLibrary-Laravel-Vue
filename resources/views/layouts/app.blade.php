@@ -23,7 +23,7 @@
         
         <!-- <v-app app id="app"> -->
 
-            <main class="py-4">
+            <main class="">
                 @yield('content')
             </main>
             

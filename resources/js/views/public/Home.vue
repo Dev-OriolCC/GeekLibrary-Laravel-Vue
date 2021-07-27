@@ -1,18 +1,20 @@
 <template>
     <div>
-        <h2>Welcome from Home</h2>
-        <v-app app>
+        <PublicHeader />
             <v-container>
-                <v-btn depressed color="error">Primary</v-btn>
+               <h4 class="col-12 text-center">Welcome to Geek Library!</h4>
             </v-container>
-        </v-app >
     </div>
 </template>
 
 <script>
-
+import PublicHeader from '../../components/PublicHeader.vue';
 export default ({
-    name: "Home"    
+    name: "Home",
+    components: {
+        PublicHeader,
+    }
+
 })
 </script>
 
