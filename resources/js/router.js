@@ -4,6 +4,7 @@ import axios from 'axios';
 // Views
 import Home from './views/public/Home';
 import About from './views/public/About';
+import Contact from './views/public/Contact';
 
 // Use
 Vue.use(axios);
@@ -25,6 +26,12 @@ export default new VueRouter({
             name: 'About',
             component: About,
             meta: { title: 'About' }
+        },
+        {
+            path: '/Contact',
+            name: 'Contact',
+            component: Contact,
+            meta: { title: 'Contact' }
         },
     ],
     // mode: 'history',

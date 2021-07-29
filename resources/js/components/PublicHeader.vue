@@ -22,7 +22,9 @@
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white h5 mt-2" href="#">Contact</a>
+                            <router-link to="/Contact">
+                                <a class="nav-link text-white h5 mt-2" href="#">Contact</a>
+                            </router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white h5 mt-2" href="#">Extra</a>
