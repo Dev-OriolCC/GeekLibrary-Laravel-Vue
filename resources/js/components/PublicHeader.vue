@@ -31,11 +31,15 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 mr-5 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <input class="form-control ml-4 mr-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success ml-4 my-2 my-sm-0 " type="submit">Search</button>
                     </form>
+                    <div class="col-12 col-sm-2 mt-2">
+                        <route-link to="/" class="mx-3"><a href="" class="h5 text-white">Login</a></route-link>
+                        <route-link to="/" class="mx-3"><a href="" class="h5 text-white">Register</a></route-link>
+                    </div>
                 </div>
-                </nav>
+            </nav>
         </div>
     </div>
 </template>
