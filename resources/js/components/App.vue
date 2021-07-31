@@ -15,7 +15,7 @@ export default ({
     data: function () {
         return {
             title: '',
-            auth: false,
+            auth: this.user,
         }
     },
 

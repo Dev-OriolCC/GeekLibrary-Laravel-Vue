@@ -1,6 +1,5 @@
 <template>
     <div>
-        <PublicHeader />
         <div class="container mt-4">
             <div class="card col-12 col-sm-6 mx-auto">
                 <div class="card-header">
@@ -10,7 +9,7 @@
                     <form @submit.prevent="submitLogin">
                         <form-group>
                             <label for="email">Email:</label>
-                            <input type="email" name="email" class="form-control">
+                            <input type="email" name="email" class="form-control" v-model="email">
                         </form-group>
                         <form-group>
                             <label for="password">Password:</label>
@@ -27,11 +26,10 @@
 </template>
 
 <script>
-import PublicHeader from '../../components/PublicHeader.vue';
 export default ({
     name: "Login",
     components: {
-        PublicHeader
+        
     },
     data: function () {
         return {

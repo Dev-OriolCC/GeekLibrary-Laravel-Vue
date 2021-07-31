@@ -1,6 +1,5 @@
 <template>
     <div>
-        <PublicHeader />
             <v-container>
                <h4 class="col-12 text-center">Welcome to Geek Library!</h4>
             </v-container>

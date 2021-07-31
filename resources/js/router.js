@@ -6,6 +6,8 @@ import Home from './views/public/Home';
 import About from './views/public/About';
 import Contact from './views/public/Contact';
 import Login from './views/public/Login';
+// Private
+import Admin from './views/private/Admin';
 
 // Use
 Vue.use(axios);
@@ -35,7 +37,7 @@ export default new VueRouter({
             meta: { title: 'Contact' }
         },
         /**
-         * Private Routes
+         * Auth Routes
          */
          {
             path: '/Login',
@@ -48,6 +50,15 @@ export default new VueRouter({
             name: 'Login',
             component: Login,
             meta: {title: 'Login'}
+        },
+        /**
+         * Private Routes
+         */
+        {
+            path: '/Admin',
+            name: 'Admin',
+            component: Admin,
+            meta: {title: 'Admin'}
         }
     ],
     // mode: 'history',

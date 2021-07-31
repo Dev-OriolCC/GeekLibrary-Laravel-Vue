@@ -1,6 +1,5 @@
 <template>
     <div>
-        <PublicHeader />
         <v-container class="mt-4">
             <v-card outlined class="mx-auto" max-width="600">
                 <v-card-title class="font-weight-bold">
