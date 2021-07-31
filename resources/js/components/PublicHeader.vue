@@ -34,9 +34,10 @@
                         <input class="form-control ml-4 mr-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success ml-4 my-2 my-sm-0 " type="submit">Search</button>
                     </form>
-                    <div class="col-12 col-sm-2 mt-2">
-                        <route-link to="/" class="mx-3"><a href="" class="h5 text-white">Login</a></route-link>
-                        <route-link to="/" class="mx-3"><a href="" class="h5 text-white">Register</a></route-link>
+                    <div class="col-12 col-sm-2 ">
+                        <!-- <router-link to="/Login" class="mx-3"><a href="" class="h5 text-white">Login</a></router-link>
+                        <router-link to="/" class="mx-3"><a href="" class="h5 text-white">Register</a></router-link> -->
+                        <router-link to="/admin"><button class="btn btn-success">Admin</button></router-link>
                     </div>
                 </div>
             </nav>
@@ -44,10 +45,11 @@
     </div>
 </template>
 
-<script>
+<script>  
 
 export default ({
     name: "PublicHeader",
+    
 })
 </script>
 

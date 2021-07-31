@@ -12,9 +12,12 @@ class MailsController extends Controller
      * @return response json
      */
     public function submit(Request $request) {
+        $data = $request->getContent();
         // $mail = Mail::create($this->validation());
-        $mail = $request->name;
-        return $mail;
+        // $mail = Mail::create([
+        //     'name' => $data->name
+        // ]);
+        return $data;
     }
 
     private function validation() {

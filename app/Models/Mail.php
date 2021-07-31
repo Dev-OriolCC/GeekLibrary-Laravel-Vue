@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mail extends Model
 {
     // protected $table = "contacts";
-    use HasFactory;
+    // use HasFactory;
+    protected $fillable = ['name', 'email', 'subject', 'message'];
     
 }

@@ -15,10 +15,9 @@
                                 
                             </v-col>
                             <v-col cols="12" md="11">
-                                <v-text-field
-                                    v-model="email" :rules="emailRules" name="email"
-                                    label="E-mail" required>
-                                    </v-text-field>
+                                <v-text-field v-model="email" :rules="emailRules" name="email" 
+                                type="text" label="E-mail" required>
+                                </v-text-field>
                             </v-col>
                             <v-col cols="12" md="11">
                                 <v-text-field
@@ -40,7 +39,6 @@
                 </v-card-text>
             </v-card>
         </v-container>
-
     </div>
 </template>
 
@@ -62,7 +60,7 @@ export default {
             axios.post('http://localhost/v8_vue_geeklibrary/public/api/mail', mail)
                 .then(response => {
                     console.log('Good')
-                    console.log(response.data.data)
+                    console.log(response.data)
                 })
                 .catch(errors => {
                     console.log('ERROR')

@@ -5,6 +5,7 @@ import axios from 'axios';
 import Home from './views/public/Home';
 import About from './views/public/About';
 import Contact from './views/public/Contact';
+import Login from './views/public/Login';
 
 // Use
 Vue.use(axios);
@@ -33,6 +34,21 @@ export default new VueRouter({
             component: Contact,
             meta: { title: 'Contact' }
         },
+        /**
+         * Private Routes
+         */
+         {
+            path: '/Login',
+            name: 'Login',
+            component: Login,
+            meta: {title: 'Login'}
+        },
+        {
+            path: '/Login',
+            name: 'Login',
+            component: Login,
+            meta: {title: 'Login'}
+        }
     ],
     // mode: 'history',
     // hash: false,

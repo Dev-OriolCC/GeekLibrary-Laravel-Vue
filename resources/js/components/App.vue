@@ -15,13 +15,19 @@ export default ({
     data: function () {
         return {
             title: '',
+            auth: false,
         }
     },
+
+    props: [
+        'user'
+    ],
 
     watch: {
         $route(to, from) {
             this.title = to.meta.title
         },
+
 
         title() {
             document.title = this.title + ' | Geek Library '
