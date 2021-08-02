@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container bg-danger">
+<div class="container mt-2">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="text-center">Geek Library Administration</h3><hr>
+                    <h3 class="text-center text-dark">Geek Library Administration</h3><hr>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

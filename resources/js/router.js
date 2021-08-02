@@ -9,6 +9,9 @@ import Login from './views/public/Login';
 // Private
 import Admin from './views/private/Admin';
 
+// Actions
+import Logout from './actions/Logout';
+
 // Use
 Vue.use(axios);
 Vue.use(VueRouter);
@@ -50,6 +53,11 @@ export default new VueRouter({
             name: 'Login',
             component: Login,
             meta: {title: 'Login'}
+        },
+        {
+            path: '/logout',
+            name: 'Logut',
+            component: Logout,
         },
         /**
          * Private Routes

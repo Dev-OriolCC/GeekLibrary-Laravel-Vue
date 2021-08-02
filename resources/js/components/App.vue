@@ -1,13 +1,26 @@
 <template>
     <div>
         <v-app app>
-            <router-view></router-view>
+            <div class="wrapper">
+                <Header />
+                <NavigationBar />
+                <div class="content-wrapper">
+                    <section class="content">
+                        <div class="container-fluid">
+                            <!-- Main Container - Content -->
+                            <router-view></router-view>         
+                        </div>
+                    </section>
+                </div>
+            </div>
         </v-app >
     </div>
     
 </template>
 
 <script>
+import NavigationBar from './NavigationBar.vue';
+import Header from './Header.vue';
 
 export default ({
     name: "App",  
@@ -17,6 +30,10 @@ export default ({
             title: '',
             auth: this.user,
         }
+    },
+
+    components: {
+        NavigationBar, Header
     },
 
     props: [

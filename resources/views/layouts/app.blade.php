@@ -40,7 +40,7 @@
 
 
 </head>
-<body>
+<body class="hold-transition sidebar-mini layout-fixed">
     <div id="app">
         <!-- <v-app app id="app"> -->
         <main class="">
