@@ -14,74 +14,75 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
     <!-- Icon -->
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Book_icon_%28closed%29_-_Blue_and_gold.svg/1200px-Book_icon_%28closed%29_-_Blue_and_gold.svg.png" type="image/x-icon">
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+
+
 
 </head>
 <body>
     <div id="app">
-        
         <!-- <v-app app id="app"> -->
-            <nav class="navbar navbar-expand-lg pt-2 navbar-light col-12" style="background-color: #3F51B5; ">
-                <router-link to="/">
-                    <a class="navbar-brand text-white ml-3 mt-2" href="#"><h3>Geek Library</h3></a>
-                </router-link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <router-link to="/">
-                                <a class="nav-link text-white h5 mt-2" href="#">Home <span class="sr-only">(current)</span></a>
-                            </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/About">
-                                <a class="nav-link text-white h5 mt-2" href="#">About</a>
-                            </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/Contact">
-                                <a class="nav-link text-white h5 mt-2" href="#">Contact</a>
-                            </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white h5 mt-2" href="#">Extra</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 mr-5 my-lg-0">
-                        <input class="form-control ml-4 mr-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success ml-4 my-2 my-sm-0 " type="submit">Search</button>
-                    </form>
-                    <div class="col-12 col-sm-2 d-flex">
-                        @auth
-                            <router-link to="/Admin" class="mx-3"><a href="" class="btn btn-success">Admin</a></router-link>
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit" class="text-white btn btn-info">Logout</button>
-                            </form>
-                        @else
-                            <a href="{{ route('login') }}" class="text-white h5">Login</a>
-                            <a href="{{ route('register') }}" class="text-white ml-2 h5">Register</a>
-                        @endauth
-                    </div>
-                </div>
-            </nav>
-
-
         <main class="">
             @yield('content')
-        </main>
-
-        
-            
+        </main>      
         <!-- </v-app id="app"> -->
     </div>
+        <!-- Scripts -->
         <script src="{{ asset(mix('js/app.js')) }}"></script>
+        <!-- jQuery -->
+        <script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+        $.widget.bridge('uibutton', $.ui.button)
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <!-- ChartJS -->
+        <script src="{{ asset('plugins/chart.js/Chart.min.js')}}"></script>
+        <!-- Sparkline -->
+        <script src="{{ asset('plugins/sparklines/sparkline.js')}}"></script>
+        <!-- JQVMap -->
+        <script src="{{ asset('plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+        <script src="{{ asset('plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+        <!-- daterangepicker -->
+        <script src="{{ asset('plugins/moment/moment.min.js')}}"></script>
+        <script src="{{ asset('plugins/daterangepicker/daterangepicker.js')}}"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+        <!-- Summernote -->
+        <script src="{{ asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
+        <!-- overlayScrollbars -->
+        <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+        <!-- AdminLTE App -->
+        <script src="{{ asset('dist/js/adminlte.js')}}"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="{{ asset('dist/js/demo.js')}}"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="{{ asset('dist/js/pages/dashboard.js')}}"></script>
 </body>
 </html>
