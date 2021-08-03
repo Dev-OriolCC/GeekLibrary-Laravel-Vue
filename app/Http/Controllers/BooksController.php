@@ -12,21 +12,25 @@ class BooksController extends Controller
      */
     public function index() {
         $books = Book::all()->toArray();
-        return array_reverse($books);
+        return response()->json($books);
     }
     /**
      * @return response creates a new book in bd.
      */
     public function store(Request $request) {
-        $book = new Book([
-            'title' => $request->title,
-            'author' => $request->author,
-            'description' => $request->description,
-            'published_at' => $request->published_at,
-            'image' => $request->image
-        ]);
-        $book->save();
-        return response()->json('Product created');
+        try {
+            $book = new Book([
+                'title' => $request->title,
+                'author' => $request->author,
+                'description' => $request->description,
+                'published_at' => $request->published_at
+            ]);
+            $book->save();
+            return response()->json('Book created');
+        } catch (\Throwable $th) {
+            return response()->json('Error');
+        }
+            
     }
     /**
      * @param int $id

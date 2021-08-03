@@ -7,6 +7,8 @@ import Login from './views/public/Login';
 import Home from './views/public/Home';
 import Admin from './views/private/Admin';
 import Books from './views/private/Books';
+import AddBook from './views/private/AddBook';
+import EditBook from './views/private/EditBook';
 
 // Actions
 import Logout from './actions/Logout';
@@ -35,11 +37,24 @@ export default new VueRouter({
             component: Home,
             meta: { title: 'Home' }
         },
+        // Books
         {
             path: '/Books',
             name: 'Books',
             component: Books,
             meta: { title: 'Books' }
+        },
+        {
+            path: '/AddBook',
+            name: 'AddBook',
+            component: AddBook,
+            meta: { title: 'Add Book' }
+        },
+        {
+            path: '/Book/:id/Edit',
+            name: 'EditBook',
+            component: EditBook,
+            meta: { title: 'Edit Book' }
         },
         {
             path: '/logout',

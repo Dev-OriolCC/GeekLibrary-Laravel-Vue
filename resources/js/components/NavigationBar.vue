@@ -20,6 +20,12 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
+                        <router-link to="/" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <p>Home</p>
+                        </router-link>
+                    </li>
+                    <li class="nav-item">
                         <router-link to="/Books" class="nav-link">
                             <i class="fas fa-book"></i>
                             <p>Books</p>

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 // Public 
 Route::get('/books', [BooksController::class, 'index']);
-Route::get('/books/{id}', [BooksController::class, 'show']);
+Route::get('/book/{id}/edit', [BooksController::class, 'show']);
 Route::post('/mail', [MailsController::class, 'submit']);
 
 // Auth
