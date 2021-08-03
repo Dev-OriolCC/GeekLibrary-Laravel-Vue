@@ -2,7 +2,7 @@
 
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="/" class="brand-link ">
+        <a href="/" class="brand-link">
             <span class="brand-text font-weight-light text-center text-white">Geek Library</span>
         </a>
         <!-- SideBar Content -->
@@ -12,33 +12,46 @@
                 <div class="image">
                 <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
-                <div class="info" style="backgound-color: black;">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+                <div class="" style="backgound-color: black;">
+                    <a href="#" class="d-block ml-4">Alexander Pierce</a>
                 </div>
             </div>
             <!-- Options of Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
+                        <router-link to="/Books" class="nav-link">
+                            <i class="fas fa-book"></i>
+                            <p>Books</p>
+                        </router-link>
+                    </li>
+                    <li class="nav-item">
                         <a href="" class="nav-link">
-                            <i class="nav-icon far fa-image"></i>
-                            <p>Option_1</p>
+                            <i class="fas fa-th"></i>
+                            <p>Categories</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link">
-                            <i class="nav-icon far fa-image"></i>
-                            <p>Option_2</p>
+                            <i class="fas fa-envelope"></i>
+                            <p>Contact</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link">
-                            <i class="nav-icon far fa-image"></i>
-                            <p>Option_3</p>
+                            <i class="fas fa-cog"></i>
+                            <p>Settings</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="fas fa-user"></i>
+                            <p>Profile</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <router-link to="/logout" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
                             <p>Logout</p>
                         </router-link>
                     </li>

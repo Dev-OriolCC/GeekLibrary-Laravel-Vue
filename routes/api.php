@@ -16,6 +16,7 @@ Route::post('/mail', [MailsController::class, 'submit']);
 Route::post('/books', [BooksController::class, 'store']);
 Route::put('/books/{id}', [BooksController::class, 'update']);
 Route::delete('/books/{id}', [BooksController::class, 'destroy']);
+Route::get('/totalBooks', [BooksController::class, 'totalBooks']);
 
 
 

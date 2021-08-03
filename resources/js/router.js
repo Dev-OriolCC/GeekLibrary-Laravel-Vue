@@ -2,12 +2,11 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import axios from 'axios';
 // Views
-import Home from './views/public/Home';
-import About from './views/public/About';
-import Contact from './views/public/Contact';
 import Login from './views/public/Login';
 // Private
+import Home from './views/public/Home';
 import Admin from './views/private/Admin';
+import Books from './views/private/Books';
 
 // Actions
 import Logout from './actions/Logout';
@@ -22,37 +21,25 @@ export default new VueRouter({
          * Public Routes
          */
         {
+            path: '/Login',
+            name: 'Login',
+            component: Login,
+            meta: {title: 'Login'}
+        },
+        /**
+         * Auth Routes
+         */
+        {
             path: '/',
             name: 'Home',
             component: Home,
             meta: { title: 'Home' }
         },
         {
-            path: '/About',
-            name: 'About',
-            component: About,
-            meta: { title: 'About' }
-        },
-        {
-            path: '/Contact',
-            name: 'Contact',
-            component: Contact,
-            meta: { title: 'Contact' }
-        },
-        /**
-         * Auth Routes
-         */
-         {
-            path: '/Login',
-            name: 'Login',
-            component: Login,
-            meta: {title: 'Login'}
-        },
-        {
-            path: '/Login',
-            name: 'Login',
-            component: Login,
-            meta: {title: 'Login'}
+            path: '/Books',
+            name: 'Books',
+            component: Books,
+            meta: { title: 'Books' }
         },
         {
             path: '/logout',

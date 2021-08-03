@@ -54,5 +54,14 @@ class BooksController extends Controller
         $book->delete();
         return response()->json('Product deleted');
     }
+    /**
+     * @return int total of Books
+     */
+    public function totalBooks(){
+        $totalBooks = Book::all()->count();
+        return response()->json([
+            'totalBooks' => $totalBooks
+        ]);
+    }
 
 }
