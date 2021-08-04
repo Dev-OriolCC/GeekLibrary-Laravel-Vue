@@ -28,7 +28,6 @@ export default ({
     data: function () {
         return {
             title: '',
-            auth: this.user,
         }
     },
 
@@ -36,9 +35,9 @@ export default ({
         NavigationBar, Header
     },
 
-    props: [
-        'user'
-    ],
+    props: {
+        user: String
+    },
 
     watch: {
         $route(to, from) {
@@ -49,6 +48,11 @@ export default ({
         title() {
             document.title = this.title + ' | Geek Library '
         },
+    },
+
+    created() {
+        this.$root.token = window.Laravel.token;
+        this.$root.user = window.Laravel.user;
     }
 
 })

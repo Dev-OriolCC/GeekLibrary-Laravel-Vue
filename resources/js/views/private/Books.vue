@@ -7,10 +7,10 @@
 
             <div v-if="loading">
                 <div class="text-center text-primary">
-                        <div class="spinner-border mt-5" role="status" style="width: 6rem; height: 6rem;">
-                            <span class="sr-only">Loading...</span>
-                        </div>
+                    <div class="spinner-border mt-5" role="status" style="width: 6rem; height: 6rem;">
+                        <span class="sr-only">Loading...</span>
                     </div>
+                </div>
             </div>
 
             <div v-else class="table-responsive col-12 col-sm-10 mx-auto">
@@ -24,13 +24,13 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody v-for="book in books">
-                            <tr>
-                                <th>{{ book.title }}</th>
-                                <th>{{ book.description }}</th>
-                                <th>{{ book.author }}</th>
-                                <th><button class="btn btn-danger">Delete</button></th>
-                                <th><router-link :to="'/Book/'+book.id+'/Edit'" class="text-white btn btn-info">Edit</router-link></th>
+                    <tbody >
+                            <tr v-for="book in books">
+                                <td>{{ book.title }}</td>
+                                <td>{{ book.description }}</td>
+                                <td>{{ book.author }}</td>
+                                <td><router-link :to="'/Book/'+book.id+'/Edit'" class="text-white btn btn-info">Edit</router-link></td>
+                                <td><a href="#" @click="destroy(book.id)" class="btn btn-danger text-white">Delete</a></td>       
                             </tr>
                     </tbody>
                 </table>
@@ -49,13 +49,24 @@ export default {
             loading: true,
         }
     },
+    methods: {
+        destroy: function($id){
+            axios.delete('http://localhost/v8_vue_geeklibrary/public/api/book/'+$id)
+                .then(response => {
+                    window.location.reload();
+                })
+                .catch(errors => {
+                    console.log(errors)
+                    
+                })
+        }
+    },
 
     mounted(){
         axios.get('http://localhost/v8_vue_geeklibrary/public/api/books/')
             .then(response => {
                 this.books = response.data
                 this.loading = false
-                console.log(this.books)
             })
             .catch(error => {
                 console.log(error)

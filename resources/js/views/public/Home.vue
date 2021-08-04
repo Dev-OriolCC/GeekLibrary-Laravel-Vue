@@ -18,7 +18,9 @@
                 <div class="icon">
                     <i class="fas fa-book"></i>
                 </div>
-                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <router-link class="small-box-footer" to="/Books">
+                    More info <i class="fas fa-arrow-circle-right"></i>
+                </router-link>
             </div>
         </div>
          <!-- Box - Total Categories -->

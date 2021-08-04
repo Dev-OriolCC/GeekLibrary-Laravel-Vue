@@ -46,6 +46,14 @@
         <main class="">
             @yield('content')
         </main>      
+        @if (Auth::check())
+            <script>
+                window.Laravel = {!!json_encode([
+                    'token' => Session::get('token'),
+                    'user' => Auth::user()
+                ])!!}
+            </script>
+        @endif
         <!-- </v-app id="app"> -->
     </div>
         <!-- Scripts -->

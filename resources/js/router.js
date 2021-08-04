@@ -9,6 +9,7 @@ import Admin from './views/private/Admin';
 import Books from './views/private/Books';
 import AddBook from './views/private/AddBook';
 import EditBook from './views/private/EditBook';
+import Profile from './views/private/Profile';
 
 // Actions
 import Logout from './actions/Logout';
@@ -36,6 +37,12 @@ export default new VueRouter({
             name: 'Home',
             component: Home,
             meta: { title: 'Home' }
+        },
+        {
+            path: '/Profile',
+            name: 'Profile',
+            component: Profile,
+            meta: { title: 'Profile' }
         },
         // Books
         {

@@ -5,29 +5,38 @@
             <div class="card mt-4 col-sm-6 col-12 mx-auto">
                 <div class="card-header"><h5>Edit Book</h5></div>
                 <div class="card-body">
-                    <form >
-                        <div class="form-group"  >
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control" v-model="book.title" name="title" id="title" >
+                    <div v-if="loading">
+                        <div class="text-center text-primary">
+                            <div class="spinner-border mt-5" role="status" style="width: 6rem; height: 6rem;">
+                                <span class="sr-only">Loading...</span>
+                            </div>
                         </div>
-                        <div class="form-group"  >
-                            <label for="author">Author</label>
-                            <input type="text" class="form-control" v-model="book.author" name="author" id="author" >
-                        </div>
-                        <div class="form-group"  >
-                            <label for="description">Description</label>
-                            <input type="text" class="form-control" v-model="book.description" name="description" id="description" >
-                        </div>
-                        <div class="form-group"  >
-                            <label for="published_at">Published At</label><br>
-                            {{ book.published_at }}
-                            <input type="date" class="form-control" v-model="book.published_at" name="published_at" id="published_at" >
-                        </div>
-                        <div class="form-group">
-                            <router-link to="/Books" class="text-white btn btn-danger">Cancel</router-link>
-                            <button class="btn btn-success">Submit</button>
-                        </div>
-                    </form>
+                    </div>
+                    <div v-else>
+                        <form @submit.prevent="updateBook">
+                            <div class="form-group" >
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" v-model="book.title" name="title" id="title" >
+                            </div>
+                            <div class="form-group"  >
+                                <label for="author">Author</label>
+                                <input type="text" class="form-control" v-model="book.author" name="author" id="author" >
+                            </div>
+                            <div class="form-group"  >
+                                <label for="description">Description</label>
+                                <input type="text" class="form-control" v-model="book.description" name="description" id="description" >
+                            </div>
+                            <div class="form-group"  >
+                                <label for="published_at">Published At</label><br>
+                                {{ book.published_at }}
+                                <input type="date" class="form-control" v-model="book.published_at" name="published_at" id="published_at" >
+                            </div>
+                            <div class="form-group">
+                                <router-link to="/Books" class="text-white btn btn-danger">Cancel</router-link>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -41,8 +50,21 @@ export default {
 
     data: function () {
         return {
-            
-            book: null
+            book: null,
+            loading: true,
+        }
+    },
+
+    methods: {
+        updateBook(){
+            axios.put('http://localhost/v8_vue_geeklibrary/public/api/book/'+this.$route.params.id, this.book)
+                .then(response => {
+                    console.log(response)
+                    this.$router.push('/Books');
+                })
+                .catch(error => {
+                    console.log(error)
+                })
         }
     },
 
