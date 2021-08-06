@@ -51,8 +51,10 @@
                 </div>
                     <div class="icon">
                     <i class="fas fa-envelope"></i>
-                 </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <router-link to="/Mails" class="small-box-footer">
+                    More info <i class="fas fa-arrow-circle-right"></i>
+                </router-link>
                </div>
          </div>
     </div>          

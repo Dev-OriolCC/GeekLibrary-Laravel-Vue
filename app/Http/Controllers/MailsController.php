@@ -20,7 +20,7 @@ class MailsController extends Controller
      */
     public function getContacts() {
         try {
-            $contacts = Mail::all();
+            $contacts = Mail::paginate(10);
             return response()->json([
                 'status' => true,
                 'contacts' => $contacts
@@ -73,15 +73,23 @@ class MailsController extends Controller
      * @return response
      */
     public function updateMail($id) {
-        $contact = Mail::find($id);
-        $viewValue = $contact->view_status;
-        $contact->update([
-            'view_status' => !$viewValue
-        ]);
-        return response()->json([
-            'status' => true,
-            'message' => 'Update successfully'
-        ]);
+        try {
+            $contact = Mail::find($id);
+            $viewValue = $contact->view_status; 
+            $contact->update([
+                'view_status' => !$viewValue
+            ]);
+            return response()->json([
+                'status' => true,
+                'message' => 'Update successfully',
+                'view_status' => $contact->view_status
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Not updated'
+            ]);
+        }
     }
     /**
      * @return response json 

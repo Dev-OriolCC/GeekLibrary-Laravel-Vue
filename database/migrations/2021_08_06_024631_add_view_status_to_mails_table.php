@@ -14,6 +14,7 @@ class AddViewStatusToMailsTable extends Migration
     public function up()
     {
         Schema::table('mails', function (Blueprint $table) {
+            $table->boolean('view_status')->default(true);
             //
         });
     }
@@ -26,7 +27,7 @@ class AddViewStatusToMailsTable extends Migration
     public function down()
     {
         Schema::table('mails', function (Blueprint $table) {
-            //
+            $table->dropColumn('view_status');
         });
     }
 }

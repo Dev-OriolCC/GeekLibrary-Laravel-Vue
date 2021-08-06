@@ -18,9 +18,10 @@ Route::post('/books', [BooksController::class, 'store']);
 Route::put('/book/{id}', [BooksController::class, 'update']);
 Route::delete('/book/{id}', [BooksController::class, 'destroy']);
 Route::get('/totalBooks', [BooksController::class, 'totalBooks']);
-
+// Mail Contacts
 Route::get('/getContacts', [MailsController::class, 'getContacts']);
 Route::get('/totalContacts', [MailsController::class, 'totalContacts']);
+Route::put('/updateMail/{id}', [MailsController::class, 'updateMail']);
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
