@@ -39,7 +39,14 @@
          <div class="col-lg-3 col-6">
              <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>32</h3>
+                    <div v-if=" this.totalContacts == null ">
+                        <div class="spinner-border text-light mb-4" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <h3>{{ this.totalContacts }}</h3>
+                    </div>
                     <p>Contact Messages</p>
                 </div>
                     <div class="icon">
@@ -64,7 +71,8 @@ export default ({
 
     data: function () {
         return {
-            totalBooks: null
+            totalBooks: null,
+            totalContacts: null,
         }
     },
     
@@ -73,6 +81,15 @@ export default ({
             .then(response => {
                 this.totalBooks = response.data.totalBooks;
                 console.log(this.totalBooks)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+        axios.get('http://localhost/v8_vue_geeklibrary/public/api/totalContacts/')
+            .then(response => {
+                this.totalContacts = response.data.totalContacts;
+                console.log(this.totalContacts)
             })
             .catch(error => {
                 console.log(error)

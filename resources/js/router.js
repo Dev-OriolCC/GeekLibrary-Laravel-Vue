@@ -10,6 +10,7 @@ import Books from './views/private/Books';
 import AddBook from './views/private/AddBook';
 import EditBook from './views/private/EditBook';
 import Profile from './views/private/Profile';
+import Mails from './views/private/Mails/Mails'
 
 // Actions
 import Logout from './actions/Logout';
@@ -67,6 +68,15 @@ export default new VueRouter({
             path: '/logout',
             name: 'Logut',
             component: Logout,
+        },
+        /**
+         * Mail Routes
+         */
+        {
+            path: '/Mails',
+            name: 'Mails',
+            component: Mails,
+            meta: { title: 'Mail' }
         },
         /**
          * Private Routes

@@ -19,7 +19,9 @@ Route::put('/book/{id}', [BooksController::class, 'update']);
 Route::delete('/book/{id}', [BooksController::class, 'destroy']);
 Route::get('/totalBooks', [BooksController::class, 'totalBooks']);
 
-Route::get('/getUser', [AppController::class, 'getUser']);
+Route::get('/getContacts', [MailsController::class, 'getContacts']);
+Route::get('/totalContacts', [MailsController::class, 'totalContacts']);
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

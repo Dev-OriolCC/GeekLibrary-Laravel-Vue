@@ -25,16 +25,4 @@ class AppController extends Controller
         return view('home');
     }
     
-    /**
-     * @return json with user
-     */
-    public function getUser(){
-        $user = Auth::user();
-        return response()->json([
-            'response' => 'success',
-            'user' => $user
-        ]);
-    }
-
-    
 }

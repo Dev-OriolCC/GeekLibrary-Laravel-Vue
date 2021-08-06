@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <router-link to="/Books" class="text-white btn btn-danger">Cancel</router-link>
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="text-white btn btn-success">Submit</button>
                             </div>
                         </form>
                     </div>

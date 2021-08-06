@@ -3,7 +3,9 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
-            <span class="brand-text font-weight-light text-center text-white">Geek Library</span>
+            <router-link to="/" class="brand-text font-weight-light text-center text-white">
+                Geek Library
+            </router-link>
         </a>
         <!-- SideBar Content -->
         <div class="sidebar">
@@ -13,7 +15,7 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="" style="backgound-color: black;">
-                    <a href="#" class="d-block ml-4">Alexander Pierce</a>
+                    <a href="#" class="d-block ml-4">{{ this.$root.user.name }}</a>
                 </div>
             </div>
             <!-- Options of Menu -->
@@ -38,10 +40,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <router-link to="/Mails" class="nav-link">
                             <i class="fas fa-envelope"></i>
                             <p>Contact</p>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link">

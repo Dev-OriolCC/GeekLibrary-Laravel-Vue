@@ -29,7 +29,7 @@
                                 <td>{{ book.title }}</td>
                                 <td>{{ book.description }}</td>
                                 <td>{{ book.author }}</td>
-                                <td><router-link :to="'/Book/'+book.id+'/Edit'" class="text-white btn btn-info">Edit</router-link></td>
+                                <td><router-link :to="'/Book/'+book.id+'/Edit'" class="text-white  btn btn-info">Edit</router-link></td>
                                 <td><a href="#" @click="destroy(book.id)" class="btn btn-danger text-white">Delete</a></td>       
                             </tr>
                     </tbody>
