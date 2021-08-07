@@ -20,7 +20,7 @@ class MailsController extends Controller
      */
     public function getContacts() {
         try {
-            $contacts = Mail::paginate(10);
+            $contacts = Mail::where('view_status', 1)->paginate(10);
             return response()->json([
                 'status' => true,
                 'contacts' => $contacts
@@ -33,9 +33,63 @@ class MailsController extends Controller
         }
     }
     /**
-     * @return int total of contacts
+     * @return Array with all viewed only contacts
      */
-    public function totalContacts() {
+    public function getViewedContacts() {
+        try {
+            $contacts = Mail::where('view_status', 0)->paginate(10);
+            return response()->json([
+                'status' => true,
+                'contacts' => $contacts
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'contacts' => null
+            ]);
+        }
+    }
+
+    /**
+     * @return int total of  viewed contacts
+     */
+    public function totalViewedContacts() {
+        try {
+            $contacts = Mail::where('view_status', false)->count();
+            return response()->json([
+                'status' => true,
+                'totalContacts' => $contacts
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'totalContacts' => null
+            ]);
+        }
+    }
+
+    /**
+     * @return int total Unviewed Contacts
+     */
+    public function totalUnviewedContacts() {
+        try {
+            $contacts = Mail::where('view_status', true)->count();
+            return response()->json([
+                'status' => true,
+                'totalContacts' => $contacts
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'totalContacts' => null
+            ]);
+        }
+    }
+
+    /**
+     * @return int total Contacts
+     */
+    public function getContactsTotal() {
         try {
             $contacts = Mail::all()->count();
             return response()->json([
@@ -49,6 +103,7 @@ class MailsController extends Controller
             ]);
         }
     }
+
     /**
      * @param int $id
      * @return response
