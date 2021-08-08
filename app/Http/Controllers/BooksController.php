@@ -29,8 +29,7 @@ class BooksController extends Controller
             return response()->json('Book created');
         } catch (\Throwable $th) {
             return response()->json('Error');
-        }
-            
+        }       
     }
     /**
      * @param int $id

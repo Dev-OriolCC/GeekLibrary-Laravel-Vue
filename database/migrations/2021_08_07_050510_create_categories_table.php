@@ -16,9 +16,9 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             //
-            $table->integer('book_id')->unsigned();
+            //$table->integer('book_id')->unsigned();
             $table->string('name');
-            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
+            //$table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             //
             $table->timestamps();
         });
