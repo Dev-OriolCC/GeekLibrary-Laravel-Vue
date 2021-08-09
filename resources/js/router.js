@@ -13,6 +13,8 @@ import Profile from './views/private/Profile';
 import Mails from './views/private/Mails/Mails';
 import Categories from './views/private/Categories/Categories';
 import EditCategory from './views/private/Categories/EditCategory';
+import AddCategory from './views/private/Categories/AddCategory';
+import ApiMain from './views/private/Api/ApiMain';
 
 
 // Actions
@@ -95,6 +97,21 @@ export default new VueRouter({
             name: 'EditCategory',
             component: EditCategory,
             meta: { title: 'Edit Category' }
+        },
+        {
+            path: '/AddCategory',
+            name: 'AddCategory',
+            component: AddCategory,
+            meta: { title: 'Add Category' }
+        },
+        /**
+         * Api Routes
+         */
+        {
+            path: '/ApiMain',
+            name: 'ApiMain',
+            component: ApiMain,
+            meta: { title: 'Api' }
         },
         /**
          * Private Routes

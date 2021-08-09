@@ -2,7 +2,7 @@
     <div class="row">
         <div class="container">
             <div class="col-12 col-sm-10">
-                <router-link to="/" class="btn btn-success text-white mt-4">Add Category</router-link>
+                <router-link to="/AddCategory" class="btn btn-success text-white mt-4">Add Category</router-link>
             </div>
 
             <div v-if="loading">

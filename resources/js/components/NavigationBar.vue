@@ -46,10 +46,10 @@
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <router-link to="/ApiMain" class="nav-link">
                             <i class="fas fa-cog"></i>
-                            <p>Settings</p>
-                        </a>
+                            <p>Api</p>
+                        </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link to="/Profile" class="nav-link">

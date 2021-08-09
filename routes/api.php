@@ -10,15 +10,16 @@ use Illuminate\Support\Facades\Route;
 
 
 // Public 
-Route::get('/books', [BooksController::class, 'index']);
-Route::get('/book/{id}/edit', [BooksController::class, 'show']);
 Route::post('/mail', [MailsController::class, 'submit']);
 
-// Auth
+// Books
+Route::get('/books', [BooksController::class, 'index']);
+Route::get('/book/{id}/edit', [BooksController::class, 'show']);
 Route::post('/books', [BooksController::class, 'store']);
 Route::put('/book/{id}', [BooksController::class, 'update']);
 Route::delete('/book/{id}', [BooksController::class, 'destroy']);
 Route::get('/totalBooks', [BooksController::class, 'totalBooks']);
+
 // Mail Contacts
 Route::get('/getContacts', [MailsController::class, 'getContacts']);
 Route::get('/getViewedContacts', [MailsController::class, 'getViewedContacts']);
