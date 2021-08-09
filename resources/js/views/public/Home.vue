@@ -27,13 +27,22 @@
         <div class="col-lg-3 col-6">
              <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>10</h3>
+                    <div v-if=" this.totalCategories == null ">
+                        <div class="spinner-border text-light mb-4" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <h3>{{ this.totalCategories }}</h3>
+                    </div>
                     <p>Total Categories</p>
                 </div>
                     <div class="icon">
                      <i class="fas fa-th"></i>
                  </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <router-link to="/Categories" class="small-box-footer">
+                    More info <i class="fas fa-arrow-circle-right"></i>
+                </router-link>
                </div>
          </div>
          <div class="col-lg-3 col-6">
@@ -75,6 +84,7 @@ export default ({
         return {
             totalBooks: null,
             totalContacts: null,
+            totalCategories: null,
         }
     },
     
@@ -92,6 +102,14 @@ export default ({
             .then(response => {
                 this.totalContacts = response.data.totalContacts;
                 console.log(this.totalContacts)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        
+        axios.get('http://localhost/v8_vue_geeklibrary/public/api/getCategories')
+            .then(response => {
+                this.totalCategories = response.data.totalCategories
             })
             .catch(error => {
                 console.log(error)

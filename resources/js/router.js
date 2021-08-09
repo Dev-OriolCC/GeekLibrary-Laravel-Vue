@@ -10,7 +10,10 @@ import Books from './views/private/Books';
 import AddBook from './views/private/AddBook';
 import EditBook from './views/private/EditBook';
 import Profile from './views/private/Profile';
-import Mails from './views/private/Mails/Mails'
+import Mails from './views/private/Mails/Mails';
+import Categories from './views/private/Categories/Categories';
+import EditCategory from './views/private/Categories/EditCategory';
+
 
 // Actions
 import Logout from './actions/Logout';
@@ -77,6 +80,21 @@ export default new VueRouter({
             name: 'Mails',
             component: Mails,
             meta: { title: 'Mail' }
+        },
+        /**
+         * Categories Routes
+         */
+        {
+            path: '/Categories',
+            name: 'Categories',
+            component: Categories,
+            meta: { title: 'Categories' }
+        },
+        {
+            path: '/Categories/:id/Edit',
+            name: 'EditCategory',
+            component: EditCategory,
+            meta: { title: 'Edit Category' }
         },
         /**
          * Private Routes

@@ -31,6 +31,16 @@
                                 {{ book.published_at }}
                                 <input type="date" class="form-control" v-model="book.published_at" name="published_at" id="published_at" >
                             </div>
+                            <!-- NEW Category section -->
+                            <div class="form-group">
+                                <label for="category_id">Category</label>
+                                <select name="category_id" v-model="book.category_id" id="category_id" class="form-control">
+                                    <option v-for="category in categories"
+                                    :value="category.id"
+                                    >{{ category.name }}</option>
+
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <router-link to="/Books" class="text-white btn btn-danger">Cancel</router-link>
                                 <button type="submit" class="text-white btn btn-success">Submit</button>
@@ -52,6 +62,7 @@ export default {
         return {
             book: null,
             loading: true,
+            categories: null
         }
     },
 
@@ -71,8 +82,8 @@ export default {
     mounted(){
         axios.get('http://localhost/v8_vue_geeklibrary/public/api/book/'+this.$route.params.id+'/edit')
             .then(response => {
-                this.book = response.data;
-                console.log(this.book);
+                this.book = response.data.book;
+                this.categories = response.data.categories
                 this.loading = false;
             })
             .catch(errors => {

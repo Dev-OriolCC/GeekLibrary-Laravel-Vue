@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -23,7 +24,8 @@ class BooksController extends Controller
                 'title' => $request->title,
                 'author' => $request->author,
                 'description' => $request->description,
-                'published_at' => $request->published_at
+                'published_at' => $request->published_at,
+                'category_id' => $request->category_id
             ]);
             $book->save();
             return response()->json('Book created');
@@ -36,8 +38,23 @@ class BooksController extends Controller
      * @return book in json
      */
     public function show($id) {
-        $book = Book::find($id);
-        return response()->json($book);
+        try {
+            $book = Book::find($id);
+            $categories = Category::all();
+            return response()->json([
+                'status' => true,
+                'message' => 'Fetch worked correctly',
+                'book' => $book,
+                'categories' => $categories,
+                'totalCategories' => $categories->count()
+            ]);
+        } catch (\Throwable $error) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Error ocurred',
+                'devErrorMessage' => $error
+            ]);
+        }
     }
     /**
      * @param int $id

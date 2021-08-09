@@ -29,9 +29,10 @@ Route::put('/updateMail/{id}', [MailsController::class, 'updateMail']);
 // Category
 Route::get('/getCategories', [CategoriesController::class, 'getCategories']);
 Route::post('/storeCategory', [CategoriesController::class, 'store']);
-Route::get('/showCategory/{id}', [CategoriesController::class, 'show']);
+Route::get('/showCategory/{id}/edit', [CategoriesController::class, 'show']);
 Route::put('/updateCategory/{id}', [CategoriesController::class, 'update']);
 Route::delete('/destroyCategory/{id}', [CategoriesController::class, 'destroyCat']);
+Route::get('/categoryTotalBooks/{id}', [CategoriesController::class, 'categoryTotalBooks']);
 
 
 
