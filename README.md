@@ -28,11 +28,11 @@ I created a API with Laravel-Php to consume in the front-end, this same API can 
 
 ## Screenshots and gifs 📸
 ![](screenshots/ss_1.PNG)
-![](screenshots/ss_2.png)
-![](screenshots/ss_4.png)
-![](screenshots/ss_5.png)
-![](screenshots/ss_6.png)
-![](screenshots/ss_3.png)
+![](screenshots/ss_2.PNG)
+![](screenshots/ss_4.PNG)
+![](screenshots/ss_5.PNG)
+![](screenshots/ss_6.PNG)
+![](screenshots/ss_3.PNG)
 
 ![](gifs/library-1.gif)
 ![](gifs/library-2.gif)
