@@ -13,7 +13,7 @@ This Library Admin Panel is built using Laravel 8 Framework, VueJS, PHP-8, MySQL
 * Responsive webpage.
 
 ## Screenshots and gifs 📸
-![](screenshots/ss_1.png)
+![](screenshots/ss_1.PNG)
 ![](screenshots/ss_2.png)
 ![](screenshots/ss_3.png)
 ![](screenshots/ss_4.png)
