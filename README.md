@@ -28,11 +28,19 @@ I created a API with Laravel-Php to consume in the front-end, this same API can 
 
 ## Screenshots and gifs 📸
 ![](screenshots/ss_1.PNG)
+<<<<<<< HEAD
 ![](screenshots/ss_2.PNG)
 ![](screenshots/ss_4.PNG)
 ![](screenshots/ss_5.PNG)
 ![](screenshots/ss_6.PNG)
 ![](screenshots/ss_3.PNG)
+=======
+![](screenshots/ss_2.png)
+![](screenshots/ss_3.png)
+![](screenshots/ss_4.png)
+![](screenshots/ss_5.png)
+![](screenshots/ss_6.png)
+>>>>>>> 1466bf1aa5a82cb5c5a1b7c3bc71e71f209de60a
 
 ![](gifs/library-1.gif)
 ![](gifs/library-2.gif)
@@ -42,3 +50,9 @@ I created a API with Laravel-Php to consume in the front-end, this same API can 
 ### Login
 Username: admin@gmail.com
 Password: oriolcesar
+<<<<<<< HEAD
+=======
+
+### Author 
+[@Dev-OriolCC](https://github.com/Dev-OriolCC)
+>>>>>>> 1466bf1aa5a82cb5c5a1b7c3bc71e71f209de60a
