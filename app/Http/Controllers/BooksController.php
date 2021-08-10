@@ -61,18 +61,39 @@ class BooksController extends Controller
      * @return response
      */
     public function update($id, Request $request) {
-        $book = Book::find($id);
-        $book->update($request->all());
-        return response()->json('Product update');
+        try {
+            $book = Book::find($id);
+            $book->update($request->all());
+            return response()->json([
+                'status' => true,
+                'message' => "$book->title Book updated succesfully"
+            ]);
+        
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Error'
+            ]);
+        }
     }
     /**
      * @param int $id
      * @return response
      */
     public function destroy($id) {
-        $book = Book::find($id);
-        $book->delete();
-        return response()->json('Product deleted');
+        try {
+            $book = Book::find($id);
+            $book->delete();
+            return response()->json([
+                'status' => true,
+                'message' => 'Book deleted succesfully!'
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Error deleting book.'
+            ]);
+        }
     }
     /**
      * @return int total of Books
